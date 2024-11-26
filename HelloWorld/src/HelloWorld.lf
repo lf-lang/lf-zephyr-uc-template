@@ -4,25 +4,18 @@ target uC {
 
 reactor R1 {
     reaction(startup) {=
-        printf("Hello World\n");
+        printf("Hello World from R1\n");
     =}
 }
 
 reactor R2 {
     reaction(startup) {=
-        printf("Hello World\n");
-    =}
-
-    timer t(0, 100 msec)
-
-    reaction(t) {=
-
+        printf("Hello World from R2\n");
     =}
 }
 
 main reactor {
     r1 = new R1()
-    r2 = new R1()
-    r3 = new R2()
+    r2 = new R2()
 }
 
