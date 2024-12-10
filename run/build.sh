@@ -2,15 +2,21 @@
 set -e
 
 usage() {
-  echo "Usage: $0 -m <main_file>"
+  echo "Usage: $0 -m <main_file> -b <board>"
   exit 1
 }
 
+# Set default values
+BOARD=qemu_cortex_m3
+
 # Parse arguments
-while getopts ":m:" opt; do
+while getopts ":m:b:" opt; do
   case ${opt} in
     m )
       LF_MAIN=$OPTARG
+      ;;
+    b )
+      BOARD=$OPTARG
       ;;
     \? )
       echo "Invalid option: -$OPTARG" 1>&2
@@ -43,11 +49,6 @@ LFC_COMMAND="${REACTOR_UC_PATH}/lfc/bin/lfc-dev ${LF_MAIN}"
 echo "Running LFC command: ${LFC_COMMAND}"
 ${LFC_COMMAND}
 
-CMAKE_CONFIGURE_COMMAND="cmake -Bbuild -DLF_SRC_GEN_PATH=${SRC_GEN_PATH} -DLF_MAIN_NAME=${LF_MAIN_NAME}"
-echo "Running CMake configure command: ${CMAKE_CONFIGURE_COMMAND}"
-${CMAKE_CONFIGURE_COMMAND}
-
-CMAKE_BUILD_COMMAND="cmake --build build --parallel $(nproc)"
-echo "Running CMake build command: ${CMAKE_BUILD_COMMAND}"
-${CMAKE_BUILD_COMMAND}
-
+WEST_COMMAND="west build -b $BOARD -p always -- -DLF_SRC_GEN_PATH=${SRC_GEN_PATH} -DLF_MAIN_NAME=${LF_MAIN_NAME}"
+echo "Running West command: ${WEST_COMMAND}"
+${WEST_COMMAND}

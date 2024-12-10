@@ -5,7 +5,6 @@ usage() {
   echo "Usage: $0 -m <main_file>"
   exit 1
 }
-
 # Parse arguments
 while getopts ":m:" opt; do
   case ${opt} in
@@ -29,9 +28,9 @@ if [ -z "${LF_MAIN}" ]; then
   usage
 fi
 
-LF_MAIN_NAME=$(basename ${LF_MAIN} .lf)
+./run/build.sh -m $LF_MAIN -b qemu_cortex_m3
 
 # Run picotool with the specified main file
-FLASH_COMMAND="west flash"
-echo "Running flash command: ${FLASH_COMMAND}"
-${FLASH_COMMAND}
+EMULATE_COMMAND="west build -t run"
+echo "Running command: ${EMULATE_COMMAND}"
+${EMULATE_COMMAND}
