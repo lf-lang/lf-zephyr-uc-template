@@ -1,10 +1,4 @@
-/*
-* This is a Blinky example which blinks the on-board LED0 of the nrf52DK. It
-* works with other boards which has a `led0` device tree alias defined.
-*/
-target uC {
-    platform: Zephyr
-}
+target uC
 
 
 main reactor {
