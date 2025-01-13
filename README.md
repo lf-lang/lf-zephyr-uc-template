@@ -3,7 +3,7 @@ This is a west-centric project template for Lingua Franca applications targeting
 
 ## Prerequisites
 - Linux or macOS operation system
-- `reactor-uc` cloned to your system and `REACTOR_UC_PATH` environment variable pointing to it.
+- [reactor-uc](https://github.com/lf-lang/reactor-uc) cloned to your system and `REACTOR_UC_PATH` environment variable pointing to it.
 
 ### Getting started
 To use this template you must first install the Zephyr dependencies, toolchains and SDK.
