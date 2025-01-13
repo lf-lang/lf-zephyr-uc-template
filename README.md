@@ -46,7 +46,7 @@ west zephyr-export
 
 
 ## HelloWorld
-To build and emulate the provided [!](./src/HelloWorld.lf) using the `native_posix` target, do:
+To build and emulate the provided [](./src/HelloWorld.lf) using the `native_posix` target, do:
 ```sh
 west build -t run
 ```
