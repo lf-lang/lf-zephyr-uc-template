@@ -34,12 +34,6 @@ Pull down the Zephyr RTOS sources using west (this can take a while)
 west update
 ```
 
-Configure environment variables
-
-```sh
-source deps/zephyr/zephyr-env.sh
-```
-
 Install Python dependencies
 ```sh
 pip install -r deps/zephyr/scripts/requirements.txt
