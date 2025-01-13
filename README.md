@@ -6,7 +6,8 @@ This is a west-centric project template for Lingua Franca applications targeting
 - [reactor-uc](https://github.com/lf-lang/reactor-uc) cloned to your system and `REACTOR_UC_PATH` environment variable pointing to it.
 
 ### Getting started
-To use this template you must first install the Zephyr dependencies, toolchains and SDK.
+Press `Use template` in the upper right corner and choose `Create a new repository`. Then clone this new repository to your machine.
+To start developing in your new repo, you must first install the Zephyr dependencies, toolchains and SDK.
 This requires you to follow selected parts of the Zephyr official Getting Started guide.
 
 Install the dependencies used by Zephyr by following the steps in [Install Dependencies](https://docs.zephyrproject.org/3.7.0/develop/getting_started/index.html#install-dependencies)
