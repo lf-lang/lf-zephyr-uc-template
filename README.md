@@ -1,5 +1,6 @@
-# Lingua Franca West Template
-This is a west-centric project template for Lingua Franca applications targeting the Zephyr RTOS.
+# Lingua Franca project template for the Zephyr RTOS and reactor-uc
+This is a west-centric project template for Lingua Franca applications targeting the Zephyr RTOS using the micro-c (uc)
+target of Lingua Franca.
 
 ## Prerequisites
 - Linux or macOS operation system
@@ -46,14 +47,14 @@ west zephyr-export
 
 
 ## HelloWorld
-To build and emulate the provided [](./src/HelloWorld.lf) using the `native_posix` target, do:
+To build and emulate the provided [HelloWorld.lf](./src/HelloWorld.lf) using the `native_posix` target, do:
 ```sh
 west build -t run
 ```
 
 ## Changing the target board
 
-To build for a different board, e.g. the `qemu_cortex_m3` emulation. Either change the `BOARD` variable in [!](./CMakeLists.txt), or using `west`:
+To build for a different board, e.g. the `qemu_cortex_m3` emulation. Either change the `BOARD` variable in [CMakeLists.txt](./CMakeLists.txt), or using `west`:
 
 ```sh
 west build -b qemu_cortex_m3 -p always -t run
@@ -63,7 +64,7 @@ Note the `-p always` which is a `west` option for cleaning the build directory. 
 
 
 ## Changing the LF application
-The `LF_MAIN` CMake variable decides which LF application to build. This can either be modified in [!](/CMakeLists.txt) or from the command line. To build [!](/src/Blinky.lf) for Adafruit Feather do:
+The `LF_MAIN` CMake variable decides which LF application to build. This can either be modified in [CMakeLists.txt](/CMakeLists.txt) or from the command line. To build [Blinky.lf](/src/Blinky.lf) for Adafruit Feather do:
 ```sh
 west build -b adafruit_feather -p always -- -DLF_MAIN=Blinky
 ```
@@ -73,7 +74,7 @@ With `west`, CMake arguments are separated from `west` arguments with a `--`.
 
 ## Log level
 
-The log level of the LF app can be changed by setting the variable `LOG_LEVEL` in [](./CMakeLists.txt) or by modifying it on the command line:
+The log level of the LF app can be changed by setting the variable `LOG_LEVEL` in [CMakeLists.txt](./CMakeLists.txt) or by modifying it on the command line:
 ```sh
 west build -t run -p always -- -DLOG_LEVEL=LF_LOG_LEVEL_DEBUG
 ```
