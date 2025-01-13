@@ -3,6 +3,7 @@
 
 manifest:
   self:
+    west-commands: scripts/west-commands.yml
     path: .
 
   remotes:

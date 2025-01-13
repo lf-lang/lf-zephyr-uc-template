@@ -1,0 +1,6 @@
+west-commands:
+  - file: scripts/clean.py
+    commands:
+      - name: clean
+        class: Clean
+        help: This command cleans all generated files
