@@ -3,7 +3,7 @@ This is a west-centric project template for Lingua Franca applications targeting
 target of Lingua Franca.
 
 ## Prerequisites
-- Linux or macOS operation system
+- Linux or macOS operating system
 - [reactor-uc](https://github.com/lf-lang/reactor-uc) cloned to your system and `REACTOR_UC_PATH` environment variable pointing to it.
 
 ### Getting started
