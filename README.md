@@ -60,7 +60,7 @@ To build for a different board, e.g. the `qemu_cortex_m3` emulation. Either chan
 west build -b qemu_cortex_m3 -p always -t run
 ```
 
-Note the `-p always` which is a `west` option for cleaning the build directory. This must be used when changing the target board.
+Note the `-p always` which is a `west` option for cleaning the build directory. This must be used when changing the target board. Alternatively `west clean` can be run in between.
 
 
 ## Changing the LF application
