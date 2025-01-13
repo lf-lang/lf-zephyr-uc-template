@@ -15,7 +15,7 @@ This requires you to follow selected parts of the Zephyr official Getting Starte
 
 2. Then install the Zephyr toolchains and SDK by following the steps in [Install the Zephyr SDK](https://docs.zephyrproject.org/3.7.0/develop/getting_started/index.html#install-the-zephyr-sdk)
 
-Create and activate a virtual environment for this project. 
+Within your newly cloned project, create and activate a virtual environment for this project. 
 
 ```sh
 python3 -m venv ./venv
