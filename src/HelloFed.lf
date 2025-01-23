@@ -1,0 +1,28 @@
+target uC
+
+reactor Src {
+  output out: int
+
+  state cnt: int = 0
+
+  timer t(0, 1 sec)
+  reaction(t) -> out {=
+    printf("(%lld, %lld) Sending %d to Dest\n", env->get_elapsed_physical_time(env), env->get_elapsed_logical_time(env), self->cnt);
+    lf_set(out, self->cnt++);
+  =}
+}
+
+reactor Dest {
+  input in: int
+
+  reaction(in) {=
+    printf("(%lld, %lld) Got %d from Src\n", env->get_elapsed_physical_time(env), env->get_elapsed_logical_time(env), in->value);
+  =}
+}
+
+federated reactor {
+  fed_src = new Src()
+  fed_dest = new Dest()
+
+  fed_src.out ~> fed_dest.in
+}

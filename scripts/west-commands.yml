@@ -4,3 +4,8 @@ west-commands:
       - name: clean
         class: Clean
         help: This command cleans all generated files
+  - file: scripts/gen_fed_template.py
+    commands:
+      - name: gen_fed_template
+        class: GenFedTemplate
+        help: Generate a template project for a federate
