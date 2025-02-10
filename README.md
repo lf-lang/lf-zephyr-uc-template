@@ -1,6 +1,6 @@
 # reactor-uc zephyr-west template
 
-![Zephyr Logo](https://www.zephyrproject.org/wp-content/uploads/2021/11/zephyr_logo_r_color_negative_big.svg)
+![Zephyr Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Zephyr_RTOS_logo_2015.svg/640px-Zephyr_RTOS_logo_2015.svg.png)
 
 - **Git:** https://github.com/zephyrproject-rtos/zephyr/
 - **Supported Boards:** https://docs.zephyrproject.org/latest/boards/index.html
