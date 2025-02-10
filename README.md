@@ -1,6 +1,16 @@
-# Lingua Franca project template for the Zephyr RTOS and reactor-uc
+# reactor-uc zephyr-west template
+
+![Zephyr Logo](https://www.zephyrproject.org/wp-content/uploads/2021/11/zephyr_logo_r_color_negative_big.svg)
+
+- **Git:** https://github.com/zephyrproject-rtos/zephyr/
+- **Supported Boards:** https://docs.zephyrproject.org/latest/boards/index.html
+- **Documentation:** https://docs.zephyrproject.org/latest/
+
+______
+
 This is a west-centric project template for Lingua Franca applications targeting the Zephyr RTOS using the micro-c (uc)
 target of Lingua Franca.
+
 
 ## Prerequisites
 - Linux or macOS operating system
@@ -115,3 +125,8 @@ ModuleNotFoundError: No module named 'elftools'
 Activate the virtual environment where the Zephyr dependencies are installed.
 
 
+<<<<<<< HEAD
+=======
+## Next steps
+It is recommended to install 
+>>>>>>> e3af0a0 (adding header for docs)
