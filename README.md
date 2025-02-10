@@ -125,8 +125,5 @@ ModuleNotFoundError: No module named 'elftools'
 Activate the virtual environment where the Zephyr dependencies are installed.
 
 
-<<<<<<< HEAD
-=======
 ## Next steps
 It is recommended to install 
->>>>>>> e3af0a0 (adding header for docs)
