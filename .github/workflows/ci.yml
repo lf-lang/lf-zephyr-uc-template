@@ -31,4 +31,4 @@ jobs:
           echo "ZEPHYR_BASE=${{github.workspace}}/deps/zephyr" >> $GITHUB_ENV
 
       - name: Run tests
-        uses: ./.github/actions/run-tests
+        run: ./.github/scripts/run-all.sh
