@@ -13,25 +13,10 @@ endif()
 find_package(Zephyr REQUIRED HINTS ${CMAKE_CURRENT_SOURCE_DIR}/deps/zephyr)
 project(reactor-uc-zephyr)
 
-# Run LFC
-set(LFC_COMMAND $ENV{REACTOR_UC_PATH}/lfc/bin/lfc-dev ${CMAKE_CURRENT_SOURCE_DIR}/src/${LF_MAIN}.lf)
-execute_process(COMMAND echo "Running LFC: ${LFC_COMMAND}")
-execute_process(
-    COMMAND ${LFC_COMMAND}
-    ECHO_OUTPUT_VARIABLE
-    COMMAND_ERROR_IS_FATAL ANY
-)
+set(LF_MAIN_TARGET app)
 
-file(GLOB_RECURSE LF_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.lf)
-set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS ${LF_SOURCES})
-message(STATUS "Found LF sources: ${LF_SOURCES}")
+include($ENV{REACTOR_UC_PATH}/cmake/lfc.cmake)
 
-
-# Build the generated C code.
-include(src-gen/${LF_MAIN}/CMakeLists.txt)
-add_subdirectory(${REACTOR_UC_PATH})
-target_sources(app PRIVATE ${LFC_GEN_MAIN} ${LFC_GEN_SOURCES})
-target_include_directories(app PRIVATE ${LFC_GEN_INCLUDE_DIRS})
-target_link_libraries(app PUBLIC reactor-uc)
-
-target_compile_definitions(reactor-uc PUBLIC LF_LOG_LEVEL_ALL=${LOG_LEVEL})
+lf_setup()
+lf_run_lfc(${CMAKE_CURRENT_SOURCE_DIR}/src ${LF_MAIN})
+lf_build_generated_code(${LF_MAIN_TARGET} ${CMAKE_CURRENT_SOURCE_DIR}/src-gen/${LF_MAIN})
