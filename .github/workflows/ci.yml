@@ -5,7 +5,7 @@ on:
 
 jobs:
   ci:
-    name: Build examples and run tests
+    name: Build and test template
     runs-on: ubuntu-24.04
     env:
       REACTOR_UC_PATH: ${{ github.workspace }}/reactor-uc
