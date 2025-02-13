@@ -16,8 +16,12 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Clone reactor-uc runtime
-        run: git clone https://github.com/lf-lang/reactor-uc.git --recursive -b ci-zephyr-template
+      - name: Checkout reactor-uc
+        uses: actions/checkout@v3
+        with:
+          repository: lf-lang/reactor-uc
+          path: reactor-uc
+          submodules: recursive
 
       - name: Install LFC dependencies
         uses: ./reactor-uc/.github/actions/lingua-franca
@@ -26,7 +30,6 @@ jobs:
         uses: ./reactor-uc/.github/actions/zephyr
         with:
           clone-template: false
-
 
       - name: Pull down Zephyr RTOS
         run: |
