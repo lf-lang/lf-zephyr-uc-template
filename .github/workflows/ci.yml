@@ -17,17 +17,22 @@ jobs:
           submodules: recursive
 
       - name: Clone reactor-uc runtime
-        run: git clone https://github.com/lf-lang/reactor-uc.git --recursive
-
-      - name: Install Zephyr dependencies
-        uses: ./reactor-uc/.github/actions/zephyr
+        run: git clone https://github.com/lf-lang/reactor-uc.git --recursive -b ci-zephyr-template
 
       - name: Install LFC dependencies
         uses: ./reactor-uc/.github/actions/lingua-franca
+      
+      - name: Install Zephyr dependencies
+        uses: ./reactor-uc/.github/actions/zephyr
+        with:
+          clone-template: false
+
 
       - name: Pull down Zephyr RTOS
         run: |
           west update
+          west zephyr-export
+          pip install -r deps/zephyr/scripts/requirements.txt
           echo "ZEPHYR_BASE=${{github.workspace}}/deps/zephyr" >> $GITHUB_ENV
 
       - name: Run tests
