@@ -3,8 +3,8 @@
 ![Zephyr Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Zephyr_RTOS_logo_2015.svg/640px-Zephyr_RTOS_logo_2015.svg.png)
 
 - **Git:** <https://github.com/zephyrproject-rtos/zephyr/>
-- **Supported Boards:** <https://docs.zephyrproject.org/latest/boards/index.html>
-- **Documentation:** <https://docs.zephyrproject.org/latest/>
+- **Supported Boards:** <https://docs.zephyrproject.org/4.1.0/boards/index.html>
+- **Documentation:** <https://docs.zephyrproject.org/4.1.0/>
 
 ______
 
