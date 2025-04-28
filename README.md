@@ -48,9 +48,9 @@ Press `Use template` in the upper right corner and choose `Create a new reposito
 To start developing in your new repo, you must first install the Zephyr dependencies, toolchains and SDK.
 This requires you to follow selected parts of the Zephyr official Getting Started guide.
 
-1. Install the dependencies used by Zephyr by following the steps in [Install Dependencies](https://docs.zephyrproject.org/3.7.0/develop/getting_started/index.html#install-dependencies)
+1. Install the dependencies used by Zephyr by following the steps in [Install Dependencies](https://docs.zephyrproject.org/4.1.0/develop/getting_started/index.html#install-dependencies)
 
-2. Then install the Zephyr toolchains and SDK by following the steps in [Install the Zephyr SDK](https://docs.zephyrproject.org/3.7.0/develop/getting_started/index.html#install-the-zephyr-sdk)
+2. Then install the Zephyr toolchains and SDK by following the steps in [Install the Zephyr SDK](https://docs.zephyrproject.org/4.1.0/develop/getting_started/index.html#install-the-zephyr-sdk)
 
 Within your newly cloned project, create and activate a virtual environment for this project.
 
