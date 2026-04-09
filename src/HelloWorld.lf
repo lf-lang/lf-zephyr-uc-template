@@ -1,7 +1,6 @@
-target uC {
-    timeout: 3 sec
-}
+target uC
 
+@timeout(3s)
 main reactor {
     timer t(0, 1 sec)
     reaction(t) {=
