@@ -1,5 +1,6 @@
 target uC
 
+@platform("Zephyr")
 @timeout(3s)
 main reactor {
     timer t(0, 1 sec)
