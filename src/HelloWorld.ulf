@@ -1,4 +1,3 @@
-target uC
 
 @platform("Zephyr")
 @timeout(3s)
